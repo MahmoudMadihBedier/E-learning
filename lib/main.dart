@@ -1,3 +1,5 @@
+import 'package:chatapp/core/Screens/chatScreen.dart';
+import 'package:chatapp/core/initscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'core/Screens/regisrtation.dart';
@@ -17,7 +19,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Yipy',
 
-      home: SigninScreen (),
+      // home: ChatScreen (),
+      initialRoute: initScreen.ScreenRoute,
+      routes: {
+        initScreen.ScreenRoute:(context)=>initScreen(),
+        SigninScreen.ScreenRoute:(context)=>SigninScreen(),
+        regestrationScreen.ScreenRoute:(context)=>regestrationScreen(),
+        ChatScreen.ScreenRoute:(context)=>ChatScreen(),
+      },
     );
   }
 }

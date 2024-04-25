@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../UIwidgets/buttonSINgUP.dart';
 
 class SigninScreen extends StatefulWidget {
+  static const String ScreenRoute='SigninScreen';
   const SigninScreen({super.key});
 
   @override

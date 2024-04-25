@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../UIwidgets/buttonSINgUP.dart';
 
 class regestrationScreen extends StatefulWidget {
+  static const String ScreenRoute ="regestrationScreen" ;
   const regestrationScreen({super.key});
 
   @override

@@ -1,9 +1,10 @@
+import 'package:chatapp/core/Screens/regisrtation.dart';
+import 'package:chatapp/core/Screens/signinScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../UIwidgets/buttonSINgUP.dart';
-
 class initScreen extends StatefulWidget {
+static const String ScreenRoute='initScreen';
   const initScreen({super.key});
 
   @override
@@ -39,13 +40,17 @@ class _initScreenState extends State<initScreen> {
             regsterButton(
               color: Color(0xFF96D6A4),
               title:" Sing in ",
-              onprassed: (){},
+              onprassed: (){
+                Navigator.pushNamed(context,SigninScreen.ScreenRoute);
+              },
             ),
             SizedBox(height: 30,),
             regsterButton(
               color: Color(0xfffed064),
               title:" Register ",
-              onprassed: (){},
+              onprassed: (){
+                Navigator.pushNamed(context, regestrationScreen.ScreenRoute);
+              },
             )
           ],
         ),

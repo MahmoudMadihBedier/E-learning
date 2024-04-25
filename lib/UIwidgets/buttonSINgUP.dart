@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class regsterButton extends StatelessWidget {
 final Color color;
 final String title ;
-final Function onprassed ;
+final VoidCallback onprassed ;
 regsterButton({required this.color ,required this.title,required this.onprassed});
 
   @override
@@ -16,7 +16,7 @@ regsterButton({required this.color ,required this.title,required this.onprassed}
         color: color,
         borderRadius: BorderRadius.circular(30),
         child: MaterialButton(
-          onPressed: ()=> onprassed ,
+          onPressed:onprassed ,
           minWidth: 200,
           height: 42,
           child: Text(
