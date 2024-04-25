@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "572110937259",
+    "project_id": "yippy-aca99",
+    "storage_bucket": "yippy-aca99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572110937259:android:f731aefec880e5d975ebee",
+        "android_client_info": {
+          "package_name": "com.Madih.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjuwJggihAVC67D7mkAOQC-LofY0Z5_Rg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572110937259:android:2a9a7fd895ff780475ebee",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjuwJggihAVC67D7mkAOQC-LofY0Z5_Rg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
