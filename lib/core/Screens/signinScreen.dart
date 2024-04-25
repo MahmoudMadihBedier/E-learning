@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 import '../../UIwidgets/buttonSINgUP.dart';
 
-class regestrationScreen extends StatefulWidget {
-  const regestrationScreen({super.key});
+class SigninScreen extends StatefulWidget {
+  const SigninScreen({super.key});
 
   @override
-  State<regestrationScreen> createState() => _regestrationScreenState();
+  State<SigninScreen> createState() => _SigninScreenState();
 }
 
-class _regestrationScreenState extends State<regestrationScreen> {
+class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,21 +31,21 @@ class _regestrationScreenState extends State<regestrationScreen> {
               child: TextField(
                 textAlign: TextAlign.start,
                 onChanged: (value){},
-              decoration: InputDecoration(
-                hintText: ' Enter your E-mail ',
-                contentPadding: EdgeInsets.symmetric(vertical: 10 ,horizontal: 20),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(30))
+                decoration: InputDecoration(
+                  hintText: ' Enter your E-mail ',
+                  contentPadding: EdgeInsets.symmetric(vertical: 10 ,horizontal: 20),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(30))
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green.shade300),
+                      borderRadius: BorderRadius.all(Radius.circular(30))
+                  ) ,
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xfffed064), width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(30))
+                  ) ,
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green.shade300),
-                  borderRadius: BorderRadius.all(Radius.circular(30))
-                ) ,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xfffed064), width: 2),
-                  borderRadius: BorderRadius.all(Radius.circular(30))
-                ) ,
-              ),
               ),
             ),
             Padding(
@@ -73,14 +73,14 @@ class _regestrationScreenState extends State<regestrationScreen> {
             Padding(
               padding: const EdgeInsets.all(15),
               child: regsterButton(
-                color: Color(0xfffed064),
-                title:" Register ",
+                color: Color(0xFF96D6A4),
+                title:" Sign in ",
                 onprassed: (){},
               ),
             ),
           ],
         ),
       ),
-    );
+    );;
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'core/Screens/regisrtation.dart';
+import 'core/Screens/signinScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,12 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Yipy',
-      theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: regestrationScreen (),
+      home: SigninScreen (),
     );
   }
 }

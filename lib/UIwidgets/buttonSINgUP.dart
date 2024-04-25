@@ -14,7 +14,7 @@ regsterButton({required this.color ,required this.title,required this.onprassed}
       child: Material(
         elevation: 5,
         color: color,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(30),
         child: MaterialButton(
           onPressed: ()=> onprassed ,
           minWidth: 200,
