@@ -4,7 +4,6 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 class ChatScreen extends StatefulWidget {
   static const String ScreenRoute ="ChatScreen" ;
   const ChatScreen({super.key});
@@ -14,10 +13,8 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final _firestore =FirebaseFirestore.instance;
   final _auth=FirebaseAuth.instance;
-  late User signInUser;  //to save the user mail that will send
-  String? massageText;  // to save the massage that will be send
+  late User signInUser;
   @override
   void initState() {
     super.initState();
@@ -33,12 +30,6 @@ class _ChatScreenState extends State<ChatScreen> {
       }
     }catch(e){
       print(e);
-    }
-  }
-  Future<void> geyMassages() async {
-    final massages= await _firestore.collection('massages').get();
-    for(var massage in massages.docs){
-      print(massage.data());
     }
   }
   @override
@@ -64,10 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         actions: [
           IconButton(
-              onPressed:(){
-               _auth.signOut();
-               Navigator.pop(context);
-              },
+              onPressed:(){},
               icon: Icon(Icons.logout_outlined),color: Colors.white,)
         ],
 
@@ -90,7 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   Expanded(
                       child: TextField(
                         onChanged: (value) {
-                          massageText=value;
+
                         },
                         decoration: InputDecoration(
                             contentPadding:EdgeInsets.symmetric(
@@ -102,13 +90,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
 
                       ),),
-                  TextButton(onPressed: (){
-                    geyMassages();
-                    _firestore.collection('massages').add( {
-                      'text':massageText,
-                      'sender':signInUser.email
-                    });
-                  },
+                  TextButton(onPressed: (){},
                       child:Text('send',style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
