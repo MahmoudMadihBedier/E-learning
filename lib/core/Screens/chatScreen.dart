@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class ChatScreen extends StatefulWidget {
   static const String ScreenRoute ="ChatScreen" ;
   const ChatScreen({super.key});
@@ -13,6 +13,25 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final _auth=FirebaseAuth.instance;
+  late User signInUser;
+  @override
+  void initState() {
+    super.initState();
+    // TODO: implement initState
+    getCurrentUser();
+  }
+  void getCurrentUser(){
+    try{
+      final user =_auth.currentUser;
+      if (user!=null){
+        signInUser=user;
+        print(signInUser.email);
+      }
+    }catch(e){
+      print(e);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

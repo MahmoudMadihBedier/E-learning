@@ -1,6 +1,9 @@
+// import 'dart:html';
+
+import 'package:chatapp/core/Screens/chatScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../UIwidgets/buttonSINgUP.dart';
 
 class regestrationScreen extends StatefulWidget {
@@ -12,6 +15,9 @@ class regestrationScreen extends StatefulWidget {
 }
 
 class _regestrationScreenState extends State<regestrationScreen> {
+  final _auth=FirebaseAuth.instance ;
+  late String Email;
+  late String Password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +36,11 @@ class _regestrationScreenState extends State<regestrationScreen> {
             Padding(
               padding: const EdgeInsets.all(25),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.start,
-                onChanged: (value){},
+                onChanged: (value){
+                  Email=value;
+                },
               decoration: InputDecoration(
                 hintText: ' Enter your E-mail ',
                 contentPadding: EdgeInsets.symmetric(vertical: 10 ,horizontal: 20),
@@ -52,8 +61,11 @@ class _regestrationScreenState extends State<regestrationScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextField(
+                obscureText: true,
                 textAlign: TextAlign.start,
-                onChanged: (value){},
+                onChanged: (value){
+                  Password=value;
+                },
                 decoration: InputDecoration(
                   hintText: ' Enter your password ',
                   contentPadding: EdgeInsets.symmetric(vertical: 10 ,horizontal: 20),
@@ -76,7 +88,20 @@ class _regestrationScreenState extends State<regestrationScreen> {
               child: regsterButton(
                 color: Color(0xfffed064),
                 title:" Register ",
-                onprassed: (){},
+                onprassed: () async {
+                  try{
+                    final NewUser=await _auth.createUserWithEmailAndPassword(
+                        email: Email,
+                        password: Password
+                    );
+                    Navigator.pushNamed(context, ChatScreen.ScreenRoute);
+                  }catch(e){
+                    print(e);
+
+                  }
+                  // print(Email);
+                  // print( Password);
+                },
               ),
             ),
           ],

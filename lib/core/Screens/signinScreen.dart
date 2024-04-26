@@ -30,6 +30,7 @@ class _SigninScreenState extends State<SigninScreen> {
             Padding(
               padding: const EdgeInsets.all(25),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.start,
                 onChanged: (value){},
                 decoration: InputDecoration(
@@ -52,6 +53,7 @@ class _SigninScreenState extends State<SigninScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextField(
+                obscureText: true,
                 textAlign: TextAlign.start,
                 onChanged: (value){},
                 decoration: InputDecoration(
