@@ -1,4 +1,4 @@
-// import 'package:chatapp/UIwidgets/massageWidget.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -22,7 +22,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
  final massageTextcontrolar=TextEditingController();
   final _auth=FirebaseAuth.instance;
-  late User signInUser;  //to save the user mail that will send
+  // late User signInUser;  //to save the user mail that will send
   String? massageText;  // to save the massage that will be send
   @override
   void initState() {
@@ -30,10 +30,9 @@ class _ChatScreenState extends State<ChatScreen> {
     // TODO: implement initState
     getCurrentUser();
   }
-  Future<void> getCurrentUser() async {
+  void getCurrentUser(){
     try{
-      // final user =_auth.currentUser;
-      final user = await FirebaseAuth.instance.currentUser;
+      final user =_auth.currentUser;
       if (user!=null){
         signInUser=user;
         print(signInUser.email);
@@ -91,8 +90,7 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-          Expanded
-            (child: const MassageStreemBulider()),
+          const MassageStreemBulider(),
             Container(
               decoration: const BoxDecoration(
                 border: Border(
@@ -188,7 +186,7 @@ class MassageStreemBulider extends StatelessWidget {
             child: ListView(
               reverse: true,
               padding: EdgeInsets.symmetric(horizontal: 10 ,vertical: 20),
-              children:massageWidgets,
+              children: massageWidgets,
 
             ),
           );
