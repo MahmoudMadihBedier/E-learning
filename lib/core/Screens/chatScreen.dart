@@ -22,7 +22,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
  final massageTextcontrolar=TextEditingController();
   final _auth=FirebaseAuth.instance;
-  late User signInUser;  //to save the user mail that will send
+  // late User signInUser;  //to save the user mail that will send
   String? massageText;  // to save the massage that will be send
   @override
   void initState() {
