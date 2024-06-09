@@ -2,8 +2,11 @@ import 'package:chatapp/core/Screens/chatScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../UIwidgets/buttonSINgUP.dart';
+import '../../learn/view/home_page.dart';
 
 class SigninScreen extends StatefulWidget {
   static const String ScreenRoute='SigninScreen';
@@ -100,7 +103,7 @@ class _SigninScreenState extends State<SigninScreen> {
                        user =await _auth.signInWithEmailAndPassword
                         (email: Email, password: Password);
                       if (user != null){
-                        Navigator.pushNamed(context, ChatScreen.ScreenRoute);
+                        Get.to(MyHomePage());
                           setState(() {
                             LoadingIcon=false;
                           });
