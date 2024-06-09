@@ -65,14 +65,14 @@ class _ChatScreenState extends State<ChatScreen> {
         BorderSide(color: Color(0xfffed064), width: 2),
             top:
         BorderSide(color: Color(0xfffed064), width: 2)),
-        backgroundColor: Colors.green.shade300.withOpacity(0.6),
-        title: Row(
+        backgroundColor: Colors.deepPurple,
+        title: const Row(
           children: [
-            Image.asset("assets/Chatappicon.png",height: 45,),
-            SizedBox(width: 10,),
-            Text("Yippy",
+            // Image.asset("assets/Chatappicon.png",height: 45,),
+            SizedBox(width: 20,),
+            Text("community chat",
                  style: TextStyle(fontSize: 25,fontWeight: FontWeight.w900 ,
-              color: Colors.green.shade300),),
+              color: Colors.white),),
           ],
         ),
         actions: [
@@ -129,7 +129,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       child:Text('send',style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
-                        color:Colors.green.shade300,
+                        color:Colors.black,
                       ),))
                 ],
               ),
@@ -156,7 +156,7 @@ class MassageStreemBulider extends StatelessWidget {
           if(!snapshot.hasData){
             return Center(
               child: CircularProgressIndicator(
-                color: Colors.green.shade300,
+                color: Colors.deepPurple.shade300,
                 strokeAlign: 30 ,
 
               ),
@@ -222,7 +222,7 @@ final bool isMe;
                 bottomRight: Radius.circular(30)
             )
               ,
-              color:isMe ? Colors.green.shade300 : Color(0xfffed064) ,
+              color:isMe ? Colors.deepPurple : Color(0xfffed064) ,
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                 child: Text('$text',
