@@ -27,36 +27,36 @@ class AlarmsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Header section
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/avatar.png'),
-                    radius: 30,
-                  ),
-                  SizedBox(width: 16),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Hi unkown 👋',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'Today is a good day to learn \n something new!',
-                        style: TextStyle(
-                          color: Colors.grey[700],
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(height: 24),
+              // Row(
+              //   children: [
+              //     CircleAvatar(
+              //       backgroundImage: AssetImage('assets/avatar.png'),
+              //       radius: 30,
+              //     ),
+              //     SizedBox(width: 16),
+              //     Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //       children: [
+              //         const Text(
+              //           'Hi unkown 👋',
+              //           style: TextStyle(
+              //             fontSize: 24,
+              //             fontWeight: FontWeight.bold,
+              //           ),
+              //         ),
+              //         SizedBox(height: 4),
+              //         Text(
+              //           'Today is a good day to learn \n something new!',
+              //           style: TextStyle(
+              //             color: Colors.grey[700],
+              //             fontSize: 14,
+              //           ),
+              //         ),
+              //       ],
+              //     )
+              //   ],
+              // ),
+              // SizedBox(height: 24),
 
               // Tab bar section
               Row(
@@ -79,7 +79,7 @@ class AlarmsScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Education subjects',
+                    'Education subjects PDF',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
